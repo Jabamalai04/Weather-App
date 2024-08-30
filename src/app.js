@@ -1,10 +1,23 @@
 const express = require('express');
-const app = express();
+const path = require('path');
 
-app.get('/about', function (req, res) {
-  res.send('about page');
+const app = express();
+const viewPath = path.join(__dirname, '../templates/views');
+app.set('view engine', 'hbs');
+app.set('views', viewPath);
+
+app.get('/about', function(req, res) {
+    res.render('about');
 })
 
-app.listen(4000, function() {
-    console.log("The server is upon port 4000");
+app.get('/help', function(req, res) {
+    res.render('help');
+})
+
+app.get('/', function(req, res) {
+    res.render('home');
+})
+
+app.listen(8000, function() {
+    console.log("The server is upon port 8000");
 })
