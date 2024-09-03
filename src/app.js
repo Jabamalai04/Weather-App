@@ -3,8 +3,11 @@ const path = require('path');
 
 const app = express();
 const viewPath = path.join(__dirname, '../templates/views');
+const publicDirectoryPath = path.join(__dirname, '../public');
+
 app.set('view engine', 'hbs');
 app.set('views', viewPath);
+app.use(express.static(publicDirectoryPath));
 
 app.get('/about', function(req, res) {
     res.render('about');
