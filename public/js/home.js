@@ -1,5 +1,11 @@
 $(document).ready(function() {
     $("button").click(function() {
-        alert("Search button clicked");
+        if (!$("#field").val()) {
+            alert("Please enter the city");
+            return;
+        }
+        alert("Success");
     })
+
 }) 
+
