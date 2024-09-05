@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("button").click(function() {
-        if (!$("#field").val()) {
+        if (!$("#city").val()) {
             alert("Please enter the city");
             return;
         }
